@@ -4,7 +4,7 @@ import ExpenseItemDescription from "./ExpenseItemDescription";
 
 import "./ExpenseItem.css";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   return (
     <Card className="expense-item">
       <ExpenseItemDate date={props.date} />
@@ -14,6 +14,6 @@ function ExpenseItem(props) {
       ></ExpenseItemDescription>
     </Card>
   );
-}
+};
 
 export default ExpenseItem;
