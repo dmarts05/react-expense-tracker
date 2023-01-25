@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -23,9 +24,16 @@ const App = () => {
     },
   ];
 
+  // const [expenses, setExpenses] = useState([]);
+
+  const newExpenseHandler = (newExpense) => {
+    // setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
+    console.log(newExpense);
+  };
+
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onNewExpense={newExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
