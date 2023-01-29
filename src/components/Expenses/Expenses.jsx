@@ -7,11 +7,9 @@ import { useState } from "react";
 const Expenses = (props) => {
   const [expensesYear, setExpensesYear] = useState("2022");
 
-  const getFilteredExpenses = () => {
-    return props.items.filter(
-      (item) => item.date.getFullYear() == expensesYear
-    );
-  };
+  const filteredExpenses = props.items.filter(
+    (item) => item.date.getFullYear() == expensesYear
+  );
 
   const expensesYearChangeHandler = (newExpensesYear) => {
     setExpensesYear(newExpensesYear);
@@ -23,7 +21,7 @@ const Expenses = (props) => {
         currentFilteredYear={expensesYear}
         onFilteredYearChange={expensesYearChangeHandler}
       />
-      {getFilteredExpenses().map((item) => (
+      {filteredExpenses.map((item) => (
         <ExpenseItem
           key={item.id}
           title={item.title}
