@@ -12,13 +12,15 @@ const ExpenseItem = (props) => {
   const amount = props.amount;
 
   return (
-    <Card className="expense-item">
-      <ExpenseItemDate date={date} />
-      <ExpenseItemDescription
-        title={title}
-        amount={amount}
-      ></ExpenseItemDescription>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseItemDate date={date} />
+        <ExpenseItemDescription
+          title={title}
+          amount={amount}
+        ></ExpenseItemDescription>
+      </Card>
+    </li>
   );
 };
 
